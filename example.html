@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Crawl Me Not</title>
+    </head>
+    <body>
+    <p>Please
+        <!-- Because this A tag has class is-email and data-mailbox and data-domain attributes, it will become a mailto: link -->
+        <a href="#" data-mailbox="mix" data-domain="example.com" class="is-email">contact us</a>
+        for more information.
+    </p>
+    <!-- Because this section has class has-email and data-mailbox and data-domain attributes, it is a container for fill-in-email elements -->
+    <section class="has-email" data-mailbox="mix" data-domain="example.com">Or you can copy
+        <!-- Because this span has class fill-in-email and is inside a has-email container, "our address" will be replaced with the email address -->
+        <span class="fill-in-email">our address</span>
+        into your email program.
+    </section>
+    <!-- Don't forget to pull in jQuery, which crawl-me-not needs to work! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- And of course, crawlmenot.js -->
+    <script src="crawlmenot.js"></script>
+</body>
