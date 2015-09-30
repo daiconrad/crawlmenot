@@ -1,16 +1,22 @@
-$(document).ready(function() {
-    $('.is-email').each(function () {
-        if (typeof $(this).data('mailbox') !== undefined &&
-                typeof $(this).data('domain') !== undefined) {
-            var email = $(this).data('mailbox') + '@' + $(this).data('domain');
-            $(this).attr('href', 'mailto:' + email);
+/* https://github.com/daiconrad/crawlmenot */
+document.addEventListener('DOMContentLoaded', function() {
+    var i, j, email, hasemail, fillin, isemail = document.querySelectorAll('.is-email');
+    for (i = 0; i < isemail.length; ++i) {
+        if (typeof isemail[i].dataset.mailbox !== undefined &&
+                typeof isemail[i].dataset.domain !== undefined) {
+            email = isemail[i].dataset.mailbox + '@' + isemail[i].dataset.domain;
+            isemail[i].href = 'mailto:' + email;
         }
-    });
-    $('.has-email').each(function () {
-        if (typeof $(this).data('mailbox') !== undefined &&
-                typeof $(this).data('domain') !== undefined) {
-            var email = $(this).data('mailbox') + '@' + $(this).data('domain');
-            $(this).find('.fill-in-email').text(email);
+    }
+    hasemail = document.querySelectorAll('.has-email');
+    for (i = 0; i < hasemail.length; ++i) {
+        if (typeof hasemail[i].dataset.mailbox !== undefined &&
+                typeof hasemail[i].dataset.domain !== undefined) {
+            email = hasemail[i].dataset.mailbox + '@' + hasemail[i].dataset.domain;
+            fillin = hasemail[i].querySelectorAll('.fill-in-email');
+            for (j = 0; j < fillin.length; ++j) {
+                fillin[j].innerHTML = email;
+            }
         }
-    });
+    }
 });
