@@ -11,11 +11,13 @@ along with [jQuery](http://jquery.com/) and by marking up the
 anchor with the *is-email* class and some data attributes,
 you can create a mailto link:
 
-    <a href="#" class="is-email" data-mailbox="crawly" data-domain="example.com">contact me</a>
+    <a href="#" class="is-email"
+        data-mailbox="crawly" data-domain="example.com">contact me</a>
 
 Once the page loads, this will be transformed into:
 
-    <a href="mailto:crawly@example.com" class="is-email" data-mailbox="crawly" data-domain="example.com">contact me</a>
+    <a href="mailto:crawly@example.com" class="is-email"
+        data-mailbox="crawly" data-domain="example.com">contact me</a>
 
 Or, if you want to embed the text of the email address in the page,
 put a *has-email* class on a container and then *fill-in-email* class
